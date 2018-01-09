@@ -2,7 +2,7 @@
 
 namespace Jojotique\OC_MVC\model;
 
-require_once("model/Manager.php");
+require_once('Manager.php');
 
 class PostManager extends Manager
 {
