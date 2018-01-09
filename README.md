@@ -4,7 +4,7 @@ Exercice d'entrainement pour la création d'une architecture MVC. Passage d'un b
 
 # Contributeurs
 
-[Giildo](giildo.jm@gmail.com)
+[Giildo](mailto:giildo.jm@gmail.com)
 
 # Liens utiles
 
