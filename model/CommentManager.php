@@ -1,4 +1,7 @@
 <?php
+
+namespace Jojotique\OC_MVC\model;
+
 require_once("model/Manager.php");
 
 class CommentManager extends Manager

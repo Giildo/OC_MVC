@@ -1,5 +1,6 @@
 <?php
-require('controler/frontend.php');
+
+require_once('controler/frontend.php');
 
 try { // On essaie de faire des choses
     if (isset($_GET['action'])) {
@@ -12,7 +13,7 @@ try { // On essaie de faire des choses
             }
             else {
                 // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
-                throw new Exception('Aucun identifiant de billet envoyé');
+                throw new \Exception('Aucun identifiant de billet envoyé');
             }
         }
         elseif ($_GET['action'] == 'addComment') {
@@ -22,12 +23,12 @@ try { // On essaie de faire des choses
                 }
                 else {
                     // Autre exception
-                    throw new Exception('Tous les champs ne sont pas remplis !');
+                    throw new \Exception('Tous les champs ne sont pas remplis !');
                 }
             }
             else {
                 // Autre exception
-                throw new Exception('Aucun identifiant de billet envoyé');
+                throw new \Exception('Aucun identifiant de billet envoyé');
             }
         }
     }
