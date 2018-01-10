@@ -1,12 +1,25 @@
 <?php
 
 use \Jojotique\OC_MVC\controler\Controler;
+use \Jojotique\OC_MVC\lib\framework\Router;
 
 require_once('controler/Controler.php');
+require_once('lib/framework/Router.php');
 
 try { // On essaie de faire des choses
 	$controler = new Controler();
+	$router = new router($_SERVER[REQUEST_URI]);
+	$route = $router->uriChecker();
 
+	var_dump($route);
+
+	if ($route) {
+		$methode = $route->action();
+		$controler->$methode(2);
+	} else {
+		$controler->listPosts();
+	}
+/*
 	if (isset($_GET['action'])) {
 		if ($_GET['action'] == 'listPosts') {
 			$controler->listPosts();
@@ -15,7 +28,9 @@ try { // On essaie de faire des choses
 			if (isset($_GET['id']) && $_GET['id'] > 0) {
 				$controler->post();
 			}
-			else {
+			elseif (isset($_GET['id']) && $_GET['id'] <= 0) {
+				throw new \Exception('Identifiant du post non valide');
+			} else {
 				// Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
 				throw new \Exception('Aucun identifiant de billet envoyé');
 			}
@@ -35,10 +50,7 @@ try { // On essaie de faire des choses
 				throw new \Exception('Aucun identifiant de billet envoyé');
 			}
 		}
-	}
-	else {
-		$controler->listPosts();
-	}
+	}*/
 }
 catch(Exception $e) {
 	$errorMessage = $e->getMessage();

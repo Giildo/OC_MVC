@@ -18,12 +18,13 @@ class Controler
 		require('view/frontend/listPostsView.php');
 	}
 
-	function post() {
+	function post(int $id) {
+		var_dump('Bonjour');
 		$postManager = new PostManager();
 		$commentManager = new CommentManager();
 
-		$post = $postManager->getPost($_GET['id']);
-		$comments = $commentManager->getComments($_GET['id']);
+		$post = $postManager->getPost($id);
+		$comments = $commentManager->getComments($id);
 
 		require('view/frontend/postView.php');
 	}

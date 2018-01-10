@@ -1,0 +1,53 @@
+* {
+	font-family: 'Jura', sans-serif;
+}
+
+h1 {
+	width: 90%;
+	margin: auto;
+	padding-top: 20px;
+	text-align: center;
+	font-family: 'Russo One', sans-serif;
+}
+
+h1:after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 1px;
+	margin-top: 10px;
+	background-image: linear-gradient(to right, white, black, white);
+}
+
+h2 {
+	font-family: 'Bangers', cursive;
+	font-size: 2em;
+	font-weight: normal;
+	margin-left: 10%;
+}
+
+h3 {
+	margin-bottom: 0;
+}
+
+h4 {
+	margin-top: 0;
+	font-style: italic;
+	font-size: 0.8em;
+}
+
+.news {
+	margin: 20px 0 20px 15%;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+.news p {
+	padding-left: 20px;
+}
+
+#corps {
+	width: 75%;
+	margin: auto;
+}

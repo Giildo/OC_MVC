@@ -1,32 +1,37 @@
 <?php
 
-$title = 'Mon blog'; ?>
+$title = 'The best Blog';
 
-<?php ob_start(); ?>
-<h1>Mon super blog !</h1>
-<p>Derniers billets du blog :</p>
+ob_start();?>
+<h1>Mon super blog</h1>
 
+<div id="corps">
+    <h2>Derniers billets du blog :</h2>
+
+
+    <?php
+    while ($data = $posts->fetch())
+    {
+    ?>
+        <div class="news">
+            <h3><?= htmlspecialchars($data['title']) ?></h3>
+            <h4>le <?= $data['creation_date_fr'] ?></h4>
+            
+            <p>
+                <?= nl2br(htmlspecialchars($data['content'])) ?>
+                <br />
+                <br />
+                <em><a href="index.php?action=post&id=<?= $data['id'] ?>">Commentaires</a></em>
+            </p>
+        </div>
+    <?php
+    }
+
+    $posts->closeCursor();
+?>
+</div>
 
 <?php
-while ($data = $posts->fetch())
-{
-?>
-    <div class="news">
-        <h3>
-            <?= htmlspecialchars($data['title']) ?>
-            <em>le <?= $data['creation_date_fr'] ?></em>
-        </h3>
-        
-        <p>
-            <?= nl2br(htmlspecialchars($data['content'])) ?>
-            <br />
-            <em><a href="index.php?action=post&id=<?= $data['id'] ?>">Commentaires</a></em>
-        </p>
-    </div>
-<?php
-}
-$posts->closeCursor();
-?>
-<?php $content = ob_get_clean(); ?>
+$content = ob_get_clean();
 
-<?php require('template.php'); ?>
+require('template.php');
