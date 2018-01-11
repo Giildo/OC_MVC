@@ -6,7 +6,7 @@ include_once('Route.php');
 
 class Router
 {
-	private $uri, $routes = [];
+	private $uri, $routes = [], $route, $var;
 
 	public function __construct (string $uri) {
 		$this->uri = $uri;
@@ -23,11 +23,20 @@ class Router
 
 	public function uriChecker () {
 		foreach ($this->routes as $route) {
-			if (preg_match('#^' . $route->uri() . '$#', $this->uri)) {
-				return $route;
+			if (preg_match('#^' . $route->uri() . '$#', $this->uri, $var)) {
+				$this->route = $route;
+
+				if (isset($var[1])) {
+					$this->var = $var[1];
+				}
+				
+				return $this;
 			}
 		}
 
 		return false;
 	}
+
+	public function route() { return $this->route; }
+	public function var() { return $this->var; }
 }

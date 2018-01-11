@@ -19,7 +19,6 @@ class Controler
 	}
 
 	function post(int $id) {
-		var_dump('Bonjour');
 		$postManager = new PostManager();
 		$commentManager = new CommentManager();
 

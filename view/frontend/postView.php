@@ -4,7 +4,7 @@ $title = 'Mon blog'; ?>
 
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
-<p><a href="index.php?listPosts">Retour à la liste des billets</a></p>
+<p><a href="/OC_MVC/">Retour à la liste des billets</a></p>
 
 <div class="news">
     <h3>

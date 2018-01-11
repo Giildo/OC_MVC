@@ -14,15 +14,14 @@ ob_start();?>
     {
     ?>
         <div class="news">
-            <h3><?= htmlspecialchars($data['title']) ?></h3>
-            <h4>le <?= $data['creation_date_fr'] ?></h4>
-            
-            <p>
-                <?= nl2br(htmlspecialchars($data['content'])) ?>
-                <br />
-                <br />
-                <em><a href="index.php?action=post&id=<?= $data['id'] ?>">Commentaires</a></em>
-            </p>
+            <a href=<?= '"/OC_MVC/post/' . $data['id'] . '"'; ?>>
+                <h3><?= htmlspecialchars($data['title']) ?></h3>
+                <h4>le <?= $data['creation_date_fr'] ?></h4>
+                
+                <p>
+                    <?= nl2br(htmlspecialchars($data['content'])) ?>
+                </p>
+            </a>
         </div>
     <?php
     }
