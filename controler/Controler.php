@@ -28,7 +28,7 @@ class Controler
 		require('view/frontend/postView.php');
 	}
 
-	function addComment($postId, $author, $comment) {
+	function addComment(int $postId, string $author, string $comment) {
 		$commentManager = new CommentManager();
 
 		$affectedLines = $commentManager->postComment($postId, $author, $comment);
@@ -37,7 +37,7 @@ class Controler
 			throw new Exception('Impossible d\'ajouter le commentaire !');
 		}
 		else {
-			header('Location: index.php?action=post&id=' . $postId);
+			header('Location: /OC_MVC/post/' . $postId);
 		}
 	}
 }

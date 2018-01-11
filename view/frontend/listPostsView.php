@@ -5,7 +5,7 @@ $title = 'The best Blog';
 ob_start();?>
 <h1>Mon super blog</h1>
 
-<div id="corps">
+<section>
     <h2>Derniers billets du blog :</h2>
 
 
@@ -16,7 +16,7 @@ ob_start();?>
         <div class="news">
             <a href=<?= '"/OC_MVC/post/' . $data['id'] . '"'; ?>>
                 <h3><?= htmlspecialchars($data['title']) ?></h3>
-                <h4>le <?= $data['creation_date_fr'] ?></h4>
+                <h4><?= $data['creation_date_fr'] ?></h4>
                 
                 <p>
                     <?= nl2br(htmlspecialchars($data['content'])) ?>
@@ -28,7 +28,7 @@ ob_start();?>
 
     $posts->closeCursor();
 ?>
-</div>
+</sction>
 
 <?php
 $content = ob_get_clean();

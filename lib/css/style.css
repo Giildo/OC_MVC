@@ -52,7 +52,48 @@ h4 {
 	text-decoration: none;
 }
 
-#corps {
+section {
 	width: 75%;
 	margin: auto;
+}
+
+.a_retour {
+	color: black;
+	font-style: italic;
+}
+
+fieldset {
+	border: 1px solid black;
+	border-radius: 20px;
+	padding: 20px;
+}
+
+legend {
+	display: inline;
+	width: auto;
+	margin: 5px;
+}
+
+#coms {
+	margin: 25px;
+}
+
+#coms h2 {
+	margin-left: 0;
+}
+
+.comment {
+	margin: 25px 0;
+}
+
+.comment:after {
+	content: "";
+	display: block;
+	height: 1px;
+	width: 80%;
+	background-image: linear-gradient(to right, white, black, white)
+}
+
+.com {
+	margin-left: 50px;
 }
