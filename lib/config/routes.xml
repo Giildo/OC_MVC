@@ -3,4 +3,5 @@
 	<route uri="/OC_MVC/" action="listPosts" var=""></route>
 	<route uri="/OC_MVC/post/([0-9]+)" action="post" var="id"></route>
 	<route uri="/OC_MVC/addComment/([0-9]+)" action="addComment" var="id_post"></route>
+	<route uri="/OC_MVC/modifyComment/([0-9]+)" action="modifyComment" var="id"></route>
 </routes>

@@ -41,10 +41,19 @@ class Controler
 		}
 	}
 
-	function modifyComment(int $id) {
+	function modifyComment(int $commentId, string $author = null, string $comment = null) {
 		$commentManager = new CommentManager();
-		$comment = $commentManager->getComments($id);
 
-		require('view/frontend/modifyComment.php');
+		if ($comment == null) {
+			$comment = $commentManager->getComment($commentId);
+
+			require('view/frontend/modifyComment.php');
+		} else {
+			$commentManager->modifyComment($commentId, $comment);
+			$comment = $commentManager->getComment($commentId);
+			$comment = $comment->fetch();
+
+			header('Location: /OC_MVC/post/' . $comment['post_id']);
+		}
 	}
 }

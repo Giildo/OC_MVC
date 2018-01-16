@@ -15,7 +15,7 @@ try {
 	if ($router) {
 		$methode = $router->route()->action();
 
-		if (isset($_POST['author']) && isset($_POST['comment'])) {
+		if (isset($_POST['author']) || isset($_POST['comment'])) {
 			$controler->$methode($router->var(), $_POST['author'], $_POST['comment']);
 		} else {
 			$controler->$methode($router->var());

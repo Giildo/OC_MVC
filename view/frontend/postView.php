@@ -1,8 +1,8 @@
 <?php
 
-$title = $post['title']; ?>
+$title = $post['title'];
 
-<?php ob_start(); ?>
+ob_start(); ?>
 <section>
     <p>
         <a href="/OC_MVC/" class="a_retour">< Retour à la liste des billets</a>
@@ -57,7 +57,7 @@ $title = $post['title']; ?>
 
 <?php
 $comments->closeCursor();
-?>
-<?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+$content = ob_get_clean();
+
+require('template.php');
