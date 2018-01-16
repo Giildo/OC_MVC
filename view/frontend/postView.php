@@ -11,10 +11,8 @@ $title = $post['title']; ?>
     </p>
 
     <div class="news">
-        <h3>
-            <?= htmlspecialchars($post['title']) ?>
-            <em>le <?= $post['creation_date_fr'] ?></em>
-        </h3>
+        <h3><?= htmlspecialchars($post['title']) ?></h3>
+        <h4><?= $post['creation_date_fr'] ?></h4>
         
         <p>
             <?= nl2br(htmlspecialchars($post['content'])) ?>
