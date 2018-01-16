@@ -12,7 +12,7 @@ ob_start();?>
     {
     ?>
         <div class="news">
-            <a href=<?= '"/OC_MVC/post/' . $data['id'] . '"'; ?>>
+            <a href="/OC_MVC/post/<?= $data['id']; ?>">
                 <h3><?= htmlspecialchars($data['title']) ?></h3>
                 <h4><?= $data['creation_date_fr'] ?></h4>
                 
