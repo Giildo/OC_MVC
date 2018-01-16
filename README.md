@@ -9,3 +9,7 @@ Exercice d'entrainement pour la création d'une architecture MVC. Passage d'un b
 # Liens utiles
 
 [Adoptez une architecture MVC en PHP](https://openclassrooms.com/courses/adoptez-une-architecture-mvc-en-php)
+
+# Liens pour tester
+
+[http://www.jojotique.fr/OC_MVC/](http://www.jojotique.fr/OC_MVC/)
