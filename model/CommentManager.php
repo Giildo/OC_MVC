@@ -6,7 +6,7 @@ require_once("model/Manager.php");
 
 class CommentManager extends Manager
 {
-    public function getComments($postId)
+    public function getComments(string $postId)
     {
         $db = $this->dbConnect();
         $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY comment_date DESC');
@@ -15,7 +15,7 @@ class CommentManager extends Manager
         return $comments;
     }
 
-    public function postComment($postId, $author, $comment)
+    public function postComment(int $postId, string $author, string $comment, int $hidden)
     {
         $db = $this->dbConnect();
         $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');

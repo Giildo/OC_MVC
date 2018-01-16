@@ -40,4 +40,11 @@ class Controler
 			header('Location: /OC_MVC/post/' . $postId);
 		}
 	}
+
+	function modifyComment(int $id) {
+		$commentManager = new CommentManager();
+		$comment = $commentManager->getComments($id);
+
+		require('view/frontend/modifyComment.php');
+	}
 }

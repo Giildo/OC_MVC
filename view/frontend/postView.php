@@ -3,8 +3,6 @@
 $title = $post['title']; ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog</h1>
-
 <section>
     <p>
         <a href="/OC_MVC/" class="a_retour">< Retour à la liste des billets</a>
@@ -29,6 +27,7 @@ $title = $post['title']; ?>
                 <div class="comment">
                     <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
                     <p class="com"><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+                    <p class="com_modify"><a href="/OC_MVC/modifyComment/<?= $comment['id']; ?>">Modifier</a></p>
                 </div>
             <?php
             } while ($comment = $comments->fetch());
@@ -45,7 +44,6 @@ $title = $post['title']; ?>
             <div class="form-group">
                 <label for="comment">Commentaire</label><br />
                 <textarea id="comment" name="comment" class="form-control"></textarea>
-            </div>
             <div>
                 <input type="submit" class="btn" />
             </div>

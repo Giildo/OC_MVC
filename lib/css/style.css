@@ -94,6 +94,16 @@ legend {
 	background-image: linear-gradient(to right, white, black, white)
 }
 
-.com {
+.com, .com_modify {
 	margin-left: 50px;
+}
+
+.com_modify {
+	text-decoration: underline;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.com_modify:hover {
+	color: rgb(100,100,100);
 }
